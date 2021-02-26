@@ -83,7 +83,7 @@ func generateArrayB() {
 }
 
 func addArrays() {
-	wg.Add(7)
+	wg.Add(6)
 
 	go addLine1()
 	go addLine2()
@@ -91,19 +91,9 @@ func addArrays() {
 	go addLine4()
 	go addLine5()
 	go addLine6()
-	go addLine7()
 	wg.Wait()
 
 }
-
-//
-// func count() {
-// 	var d = 0
-// 	for e := 0; e < 200000000; e++ {
-// 		d += e
-// 	}
-// 	wg.Done()
-// }
 
 func addLine1() {
 
@@ -124,6 +114,7 @@ func addLine1() {
 	wg.Done()
 	return
 }
+
 func addLine2() {
 	var res [2][8]int
 	for i := 1; i < 2; i++ {
@@ -142,6 +133,7 @@ func addLine2() {
 	wg.Done()
 	return
 }
+
 func addLine3() {
 	var res [3][8]int
 	for i := 2; i < 3; i++ {
@@ -160,6 +152,7 @@ func addLine3() {
 	wg.Done()
 	return
 }
+
 func addLine4() {
 	var res [4][8]int
 	for i := 3; i < 4; i++ {
@@ -178,6 +171,7 @@ func addLine4() {
 	wg.Done()
 	return
 }
+
 func addLine5() {
 	var res [5][8]int
 	for i := 4; i < 5; i++ {
@@ -196,6 +190,7 @@ func addLine5() {
 	wg.Done()
 	return
 }
+
 func addLine6() {
 	var res [6][8]int
 	for i := 5; i < 6; i++ {
@@ -205,24 +200,6 @@ func addLine6() {
 				res[i][j] += arrA[i][k] * arrB[k][j]
 			}
 			*resArr6 = res
-		}
-	}
-	var d = 0
-	for e := 0; e < N; e++ {
-		d += e
-	}
-	wg.Done()
-	return
-}
-func addLine7() {
-	var res [7][8]int
-	for i := 6; i < 6; i++ {
-		for j := 0; j < 8; j++ {
-			res[i][j] = 0
-			for k := 0; k < 7; k++ {
-				res[i][j] += arrA[i][k] * arrB[k][j]
-			}
-			*resArr7 = res
 		}
 	}
 	var d = 0
@@ -256,46 +233,34 @@ func printArrayB() {
 func printRessultArray() {
 
 	print("\n========================= RESULT Array ========================\n")
-	for i := 0; i < 1; i++ {
-		for j := 0; j < 8; j++ {
-			fmt.Printf("%d\t", res1[i][j])
-		}
-		print("\n")
+
+	for j := 0; j < 8; j++ {
+		fmt.Printf("%d\t", res1[0][j])
 	}
-	for i := 1; i < 2; i++ {
-		for j := 0; j < 8; j++ {
-			fmt.Printf("%d\t", res2[i][j])
-		}
-		print("\n")
+	print("\n")
+
+	for j := 0; j < 8; j++ {
+		fmt.Printf("%d\t", res2[1][j])
 	}
-	for i := 2; i < 3; i++ {
-		for j := 0; j < 8; j++ {
-			fmt.Printf("%d\t", res3[i][j])
-		}
-		print("\n")
+	print("\n")
+
+	for j := 0; j < 8; j++ {
+		fmt.Printf("%d\t", res3[2][j])
 	}
-	for i := 3; i < 4; i++ {
-		for j := 0; j < 8; j++ {
-			fmt.Printf("%d\t", res4[i][j])
-		}
-		print("\n")
+	print("\n")
+
+	for j := 0; j < 8; j++ {
+		fmt.Printf("%d\t", res4[3][j])
 	}
-	for i := 4; i < 5; i++ {
-		for j := 0; j < 8; j++ {
-			fmt.Printf("%d\t", res5[i][j])
-		}
-		print("\n")
+	print("\n")
+
+	for j := 0; j < 8; j++ {
+		fmt.Printf("%d\t", res5[4][j])
 	}
-	for i := 5; i < 6; i++ {
-		for j := 0; j < 8; j++ {
-			fmt.Printf("%d\t", res6[i][j])
-		}
-		print("\n")
+	print("\n")
+
+	for j := 0; j < 8; j++ {
+		fmt.Printf("%d\t", res6[5][j])
 	}
-	for i := 6; i < 6; i++ {
-		for j := 0; j < 8; j++ {
-			fmt.Printf("%d\t", res7[i][j])
-		}
-		print("\n")
-	}
+	print("\n\n")
 }
