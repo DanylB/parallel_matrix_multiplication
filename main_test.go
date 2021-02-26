@@ -21,19 +21,19 @@ var arrA = &a
 var b = [rowArrB][columnArrB]int{}
 var arrB = &b
 
-var res1 = [1][8]int{}
+var res1 = int{}
 var resArr1 = &res1
-var res2 = [2][8]int{}
+var res2 = int{}
 var resArr2 = &res2
-var res3 = [3][8]int{}
+var res3 = int{}
 var resArr3 = &res3
-var res4 = [4][8]int{}
+var res4 = int{}
 var resArr4 = &res4
-var res5 = [5][8]int{}
+var res5 = int{}
 var resArr5 = &res5
-var res6 = [6][8]int{}
+var res6 = int{}
 var resArr6 = &res6
-var res7 = [7][8]int{}
+var res7 = int{}
 var resArr7 = &res7
 
 var wg sync.WaitGroup
